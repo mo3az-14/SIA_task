@@ -5,6 +5,13 @@ import pandas as pd
 import warnings
 from database import TransactionInformation, db, TransactionValidation
 
+# suppress unwanted warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# load pretrained model (scikit-learn pipeline)
+with open("model.pkl", "rb") as f:
+    model = load(f)
+
 
 def insert_into_db(df: pd.DataFrame) -> None:
     # bulk insert the dataframe incase there are too many objects
@@ -20,14 +27,7 @@ def insert_into_db(df: pd.DataFrame) -> None:
         print(e)
 
 
-# suppress unwanted warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning)
-
-# load pretrained model (scikit-learn pipeline)
-with open("model.pkl", "rb") as f:
-    model = load(f)
-
-
+# validate that the event coming from kafka is an array of dictionaries
 def validate_object(obj: dict) -> tuple[bool, dict, None | Exception]:
     try:
         TransactionValidation(**obj)
