@@ -1,0 +1,8 @@
+scikit-learn
+pandas
+kafka-python
+catboost
+peewee
+pydantic
+playhouse
+pymysql
