@@ -1,4 +1,4 @@
-from peewee import AutoField, BigIntegerField, BooleanField, DoubleField, Model
+from peewee import AutoField, BooleanField, DoubleField, Model
 from playhouse.db_url import connect
 from pydantic import BaseModel
 

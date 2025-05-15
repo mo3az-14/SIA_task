@@ -62,11 +62,11 @@ run producer:
 python producer.py
 ```
 
-we are using the example object from the `example.json` in the producer.
+we are using the `"example"` object from the `example.json` in the producer.
 
-I have included 10 truthy examples and 10 falsey examples in "true examples" and "false examples".
+I have included 10 truthy and 10 falsey examples in `"true examples"` and `"false examples"`.
 
-If you want to change the "example" object you can copy an another json object and use it.
+Feel free to change the `"example"` by copying other examples into it. 
 
 python snippet used to generate falsey examples:
 ```python
